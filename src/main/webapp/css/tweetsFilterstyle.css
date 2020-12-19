@@ -1,0 +1,55 @@
+.backgroundDarkGrey {
+	background-color: #2F4F4F !important;
+}
+
+.backgroundCadetBlue {
+	background-color: #5F9EA0 !important;
+}
+
+.backgroundDarkCyan {
+	background-color: #008B8B !important;
+}
+
+.width95 {
+	width: 95vw important;
+}
+
+.ui-blockui {
+	background-color: grey !important;
+	opacity: 0.1 !important;
+	box-shadow: none !important;
+}
+
+#blckUi {
+	background-color: transparent !important;
+	border: none !important;
+}
+
+.ui-widget-overlay {
+	filter: alpha(opacity = 0.1) !important;
+}
+
+.height85 {
+	max-height: 80vh !important;
+	position: absolute !important;;
+}
+
+.ui-widget-content {
+	color: black !important;
+	background-color: #008B8B !important;
+}
+
+.userDtl {
+	width: 25% !important;
+	height: 100px;
+}
+
+.tweetDtl {
+	width: 75% !important;
+	height: 100px;
+}
+
+.profileImg {
+	width: 40px !important;
+	height: 100px !important;
+}

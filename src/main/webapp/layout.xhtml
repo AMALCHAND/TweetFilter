@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<link href="css/tweetsFilterstyle.css" rel="stylesheet" type="text/css" />
+<f:view>
+	<h:head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Twitter Handler</title>
+	</h:head>
+	<h:body styleClass="backgroundDarkGrey">
+		<div class="ui-g">
+			<p:blockUI id="blckUi" trigger="form:filterButton"  block="form">
+				<p:graphicImage value="/images/loadingTweets.gif"></p:graphicImage>
+			</p:blockUI>
+			<div class="ui-g-12">
+				<ui:insert name="content" />
+			</div>
+		</div>
+	</h:body>
+</f:view>
+</html>

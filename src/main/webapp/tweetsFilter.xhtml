@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<link href="css/tweetsFilterstyle.css" rel="stylesheet" type="text/css" />
+<ui:composition template="layout.xhtml">
+	<ui:define name="content">
+		<h:form id="form">
+			<p:panel styleClass="backgroundCadetBlue width95">
+				<p:column style="width:40%;">
+					<p:outputLabel value="Tweets By followers : "
+						style="text-align: center;"></p:outputLabel>
+					<p:inputText value="#{tweetsFilterBean.filterFollower}"
+						maxlength="50" id="filterFollowertxt">
+					</p:inputText>
+				</p:column>
+				<p:column style="width:40%;left:2%;">
+					<p:outputLabel value="  By keyword/track : "
+						style="text-align: center;"></p:outputLabel>
+					<p:inputText value="#{tweetsFilterBean.filterKeyword}"
+						maxlength="50" id="filterKeywordtxt"></p:inputText>
+				</p:column>
+				<p:column style="width:30%; text-align : center; ">
+					<p:commandLink id="filterButton"
+						process="@this filterKeywordtxt filterFollowertxt"
+						style="left: 10px;position: relative;top: 10px;"
+						update="dataPanel"
+						actionListener="#{tweetsFilterBean.filterTweets()}">
+						<p:graphicImage style="left:5px;bottom:1px;"
+							value="/images/search.ico" title="Search"></p:graphicImage>
+					</p:commandLink>
+				</p:column>
+			</p:panel>
+			<p:outputPanel styleClass="backgroundDarkCyan width95" id="dataPanel">
+				<p:poll update="tweetzz" interval="1" />
+				<p:dataScroller value="#{tweetsFilterBean.filteredTweetsList}" 
+					chunkSize="20" style="width:100%" scrollHeight="100" 
+					id="tweetzz" var="tweets">
+					<h:panelGrid style="width:95%;" columns="2"
+						columnClasses="userDtl,tweetDtl" cellpadding="2">
+						<p:column>
+							<p:link href="#{tweets.profileImage}" title="#{tweets.userName}">
+								<img src="#{tweets.profileImage}" title="#{tweets.userName}" />
+							</p:link>
+							<p>
+								<p:outputLabel style="right:2px;">
+									<b>#{tweets.userName}</b>
+								</p:outputLabel>
+							</p>
+						</p:column>
+						<p:column>
+							<p:row>
+								<p:outputLabel>
+									<p align="right">Matching Rule : #{tweets.matchingRules}</p>
+									<p>
+										: <b>#{tweets.text}</b>
+									</p>
+									<p align="right">@ #{tweets.createDate}</p>
+								</p:outputLabel>
+							</p:row>
+
+						</p:column>
+					</h:panelGrid>
+				</p:dataScroller>
+			</p:outputPanel>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
