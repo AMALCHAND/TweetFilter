@@ -4,7 +4,7 @@ Info
 	This application uses "Filtered stream" Api for filtering/searching with realtime tweets.
 	This Application is built in as like a standalone application (with no user section created).
 
-Application is Built and tested with : 
+Application is Built and tested with : 		  Maven Build
 						  Java version :11
 						  Server :apache-tomcat-9.0.40
 						  DataBase server : mysql
